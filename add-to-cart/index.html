@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Shopping Page</title>
+  <style>
+    body {
+      background: rgb(238, 174, 202);
+      background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card-body {
+      flex: 1 1 auto;
+      padding: 1rem;
+      background-color: #f7f2fa;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background-color: #6a5acd;
+      border: none;
+      transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #483d8b;
+    }
+
+    .view-cart-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #28a7469b;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border: none;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+
+    .view-cart-btn:hover {
+      background-color: #218837;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .view-cart-btn i {
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="cart.html" class="view-cart-btn" target="_blank">
+    <i class="fa-solid fa-cart-shopping"></i>
+  </a>
+
+  <div class="d-flex justify-content-evenly mt-4 flex-wrap">
+    <div class="card" style="width: 18rem;">
+      <img
+        src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRnORHl1MX7O4Mne-aDrqBfjvijq_jHh8xNNLs67DHeNvcqpN_cvYUTnwsz2YRCzK5kDuQsnxzKb1Dp7nUawqeTUF-F5bSHyKi7rgunNuZH99xAApu92uGM&usqp=CAE"
+        class="card-img-top" alt="Product 1 Image">
+      <div class="card-body">
+        <h5 class="card-title">Wellcore Creatine</h5>
+        <p class="card-text price" data-base-price="10">$10</p>
+        <label for="weight1">Select weight:</label>
+        <select class="form-select weight-selector" id="weight1" data-base-price="10">
+          <option value="1">1 kg</option>
+          <option value="1.5">1.5 kg (+$5)</option>
+          <option value="2">2 kg (+$10)</option>
+        </select>
+        <button class="btn btn-primary add-to-cart mt-4" data-name="Wellcore Creatine" data-price="10"
+          data-image="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRnORHl1MX7O4Mne-aDrqBfjvijq_jHh8xNNLs67DHeNvcqpN_cvYUTnwsz2YRCzK5kDuQsnxzKb1Dp7nUawqeTUF-F5bSHyKi7rgunNuZH99xAApu92uGM&usqp=CAE">Add
+          to Cart</button>
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR1O2wz9yyW1qV0tvQ01pvuatu1rL95T2rAvzrCFBlMoVan10ccltamSMkyolYEIUyFiKNsDMkCliRQqKTLNIeASk9Gbot5_NTtfqDM3qNVAjDm1FekOsxy&usqp=CAE"
+        class="card-img-top" alt="Product 2 Image">
+      <div class="card-body">
+        <h5 class="card-title">Bigmuscles Creatine</h5>
+        <p class="card-text price" data-base-price="15">$25</p>
+        <label for="weight2">Select weight:</label>
+        <select class="form-select weight-selector" id="weight2" data-base-price="15">
+          <option value="1">1 kg</option>
+          <option value="1.5">1.5 kg (+$7.5)</option>
+          <option value="2">2 kg (+$15)</option>
+        </select>
+        <button class="btn btn-primary add-to-cart mt-4" data-name="Bigmuscles Creatine" data-price="15"
+          data-image="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR1O2wz9yyW1qV0tvQ01pvuatu1rL95T2rAvzrCFBlMoVan10ccltamSMkyolYEIUyFiKNsDMkCliRQqKTLNIeASk9Gbot5_NTtfqDM3qNVAjDm1FekOsxy&usqp=CAE">Add
+          to Cart</button>
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img
+        src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSr3Kbq9irtejPNjGumClrt5_r4HAOHMzmcqv2U42c-pbJsBsLqFf20k7mr0FnVd8KZEOqhveWBnW3byHj1GBrJOLVSDzqDr-VyvvCGg6Nf9j10zgMX5Zcw&usqp=CAE"
+        class="card-img-top" alt="Product 3 Image">
+      <div class="card-body">
+        <h5 class="card-title">Muscleblaze Creatine</h5>
+        <p class="card-text price" data-base-price="15">$15</p>
+        <label for="weight3">Select weight:</label>
+        <select class="form-select weight-selector" id="weight3" data-base-price="15">
+          <option value="1">1 kg</option>
+          <option value="1.5">1.5 kg (+$7.5)</option>
+          <option value="2">2 kg (+$15)</option>
+        </select>
+        <button class="btn btn-primary add-to-cart mt-4" data-name="Muscleblaze Creatine" data-price="15"
+          data-image="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSr3Kbq9irtejPNjGumClrt5_r4HAOHMzmcqv2U42c-pbJsBsLqFf20k7mr0FnVd8KZEOqhveWBnW3byHj1GBrJOLVSDzqDr-VyvvCGg6Nf9j10zgMX5Zcw&usqp=CAE">Add
+          to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
