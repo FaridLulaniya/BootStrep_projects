@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,11 +21,16 @@
             background-color: #1e1e2f;
             color: #ffffff;
         }
+
         .sidebar {
             background-color: #2a2a40;
-            height: auto;
+            height: 215.5vh;
+            border-radius: 0 10px 10px 0;
             padding: 20px;
+            animation: slideIn 0.5s forwards;
+            /* Apply animation */
         }
+
         .sidebar a {
             color: #ffffff;
             text-decoration: none;
@@ -32,41 +38,103 @@
             padding: 10px;
             margin: 5px 0;
             border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            /* Add transition */
         }
+
         .sidebar a:hover {
             background-color: #3a3a5a;
+            transform: translateX(5px);
+            /* Slide effect */
         }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+        .sidebar {
+            animation: slideIn 0.5s forwards;
+            /* Apply animation */
+        }
+
         .main-content {
             padding: 20px;
         }
+
         .card {
             background-color: #2a2a40;
             border: none;
             border-radius: 10px;
         }
+
         .card-title {
             color: #ffffff;
         }
+
         .card-text {
             color: #b0b0b0;
         }
+
         .navbar {
             background-color: #2a2a40;
             border-bottom: 1px solid #3a3a5a;
         }
+
         #map {
             height: 654px;
             border-radius: 10px;
             margin-top: 20px;
         }
+
         #flowchart {
             background-color: #2a2a40;
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
         }
+
+        footer {
+            background-color: #2a2a40;
+            color: #ffffff;
+            padding: 20px 0;
+            margin-top: 20px;
+            border-top: 1px solid #3a3a5a;
+        }
+
+        footer h5 {
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #4e73df;
+        }
+
+        footer ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 10px;
+        }
+
+        footer .text-center {
+            margin-top: 20px;
+        }
     </style>
 </head>
+
 <body>
     <div class="container-fluid">
         <div class="row">
@@ -80,14 +148,15 @@
                     <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
                 </ul>
             </div>
-    
+
             <!-- Main Content -->
             <div class="col-md-10 main-content">
                 <!-- Navbar -->
                 <nav class="navbar navbar-expand-lg navbar-dark">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="#">Admin Panel</a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
@@ -102,7 +171,7 @@
                         </div>
                     </div>
                 </nav>
-    
+
                 <!-- Cards -->
                 <div class="row mt-4">
                     <div class="col-md-3">
@@ -138,7 +207,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- Charts -->
                 <div class="row mt-4">
                     <div class="col-md-6">
@@ -158,7 +227,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- Map and Popular Chart Categories -->
                 <div class="row mt-4">
                     <!-- Map -->
@@ -191,6 +260,47 @@
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- About Section -->
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>Modern Admin Dashboard is a powerful and responsive admin template designed to help you manage
+                        your data and analytics efficiently.</p>
+                </div>
+
+                <!-- Quick Links Section -->
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Home</a></li>
+                        <li><a href="users.html" class="text-white">Users</a></li>
+                        <li><a href="#" class="text-white">Analytics</a></li>
+                        <li><a href="#" class="text-white">Settings</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media Section -->
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#" class="text-white"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#" class="text-white"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="#" class="text-white"><i class="fab fa-github"></i> GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="text-center">
+                <p>&copy; 2023 Modern Admin Dashboard. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Leaflet JS -->
@@ -301,4 +411,5 @@
         });
     </script>
 </body>
+
 </html>
