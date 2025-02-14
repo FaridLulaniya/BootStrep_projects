@@ -24,11 +24,10 @@
 
         .sidebar {
             background-color: #2a2a40;
-            height: 215.5vh;
+            height: 100vh;
             border-radius: 0 10px 10px 0;
             padding: 20px;
             animation: slideIn 0.5s forwards;
-            /* Apply animation */
         }
 
         .sidebar a {
@@ -39,13 +38,11 @@
             margin: 5px 0;
             border-radius: 5px;
             transition: background-color 0.3s ease, transform 0.3s ease;
-            /* Add transition */
         }
 
         .sidebar a:hover {
             background-color: #3a3a5a;
             transform: translateX(5px);
-            /* Slide effect */
         }
 
         @keyframes slideIn {
@@ -56,10 +53,6 @@
             to {
                 transform: translateX(0);
             }
-        }
-        .sidebar {
-            animation: slideIn 0.5s forwards;
-            /* Apply animation */
         }
 
         .main-content {
@@ -86,7 +79,7 @@
         }
 
         #map {
-            height: 654px;
+            height: 400px;
             border-radius: 10px;
             margin-top: 20px;
         }
@@ -132,6 +125,35 @@
         footer .text-center {
             margin-top: 20px;
         }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .sidebar {
+                height: auto;
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 250px;
+                z-index: 1000;
+                transition: left 0.3s ease;
+            }
+
+            .sidebar.active {
+                left: 0;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .navbar-toggler {
+                display: block;
+            }
+
+            #map {
+                height: 300px;
+            }
+        }
     </style>
 </head>
 
@@ -139,7 +161,7 @@
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar -->
-            <div class="col-md-2 sidebar">
+            <div class="col-md-2 sidebar" id="sidebar">
                 <h3 class="text-center mb-4">Dashboard</h3>
                 <ul class="nav flex-column">
                     <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
@@ -156,7 +178,8 @@
                     <div class="container-fluid">
                         <a class="navbar-brand" href="#">Admin Panel</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNav">
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
@@ -174,7 +197,7 @@
 
                 <!-- Cards -->
                 <div class="row mt-4">
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-6">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Total Users</h5>
@@ -182,7 +205,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-6">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Total Sales</h5>
@@ -190,7 +213,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-6">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Total Orders</h5>
@@ -198,7 +221,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-6">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Pending Requests</h5>
@@ -408,6 +431,13 @@
 
             // Initialize Mermaid.js
             mermaid.initialize({ startOnLoad: true });
+
+            // Toggle Sidebar on Mobile
+            const sidebar = document.getElementById('sidebar');
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            navbarToggler.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+            });
         });
     </script>
 </body>
